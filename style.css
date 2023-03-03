@@ -1,6 +1,8 @@
 body {
-    background: rgb(38, 109, 196);
+    background: linear-gradient(white, blue);
+  
 }
+
 
 .do-list-body{
     width: 400px;
@@ -10,6 +12,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+h1{
+    font-family: 'arial';
+    font-size: 40px;
+    color: w;
 }
 .button-inside{
 position: relative;
