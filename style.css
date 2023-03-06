@@ -1,6 +1,7 @@
-body {
-    background: linear-gradient(white, blue);
-  
+html,body {
+    background-image: linear-gradient(to bottom right, rgb(150, 207, 248), rgb(49, 143, 244));
+  display: block;
+  height: 100%;
 }
 
 
@@ -25,7 +26,7 @@ margin-bottom: 10px;
 
 .add-input{
     height: 25px;
-        width: 100%;
+        width: 95%;
         padding-left: 10px;
         border-radius: 4px;
         border: none;
@@ -33,12 +34,33 @@ margin-bottom: 10px;
 }
 .add-btn{
     position: absolute;
-    right: 0px;
-        top: 62px;
+    right: 11px;
+        top: 76px;
         background-color:rgb(38, 109, 196);;
         height: 20px;
         color: white;
         border: none;
         border-radius: 5px;
       
+}
+
+.list-container{
+   
+    margin-top: 20px;
+}
+
+.listBtn{
+    background-color: white;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px black solid;
+    text-align: left;
+    font-size: 20px;
+    height: 50px;
+
+}
+
+.lastBtn{
+    border-bottom: none
 }
