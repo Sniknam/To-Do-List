@@ -25,32 +25,35 @@ margin-bottom: 10px;
 }
 
 .add-input{
-    height: 25px;
+    height: 40px;
         width: 95%;
         padding-left: 10px;
         border-radius: 4px;
         border: none;
         outline: none;
+        font-size: 20px;
 }
 .add-btn{
     position: absolute;
     right: 11px;
-        top: 76px;
+        top: 81px;
         background-color:rgb(38, 109, 196);;
-        height: 20px;
+        height: 24px;
         color: white;
         border: none;
-        border-radius: 5px;
+     width: 60px;
       
 }
 
 .list-container{
    
     margin-top: 20px;
+    height: 500px;
+    background-color:white;
 }
 
 .listBtn{
-    background-color: white;
+   background:none;
     display: block;
     width: 100%;
     border: none;
@@ -58,9 +61,19 @@ margin-bottom: 10px;
     text-align: left;
     font-size: 20px;
     height: 50px;
+ 
 
 }
 
 .lastBtn{
-    border-bottom: none
+    border-bottom: none;
+    text-align: center;
+}
+
+
+.fa {
+    font-size: 30px;
+    color: red;
+    float:right;
+
 }
