@@ -1,13 +1,14 @@
 const toDoListContainer = document.querySelector(".do-list-body");
 const listContainer = document.querySelector("#listContainer");
 listContainer.classList.add("listBtn");
+listContainer.classList.add("lastBtn");
 
 const listItem = [];
 
 function printListItem(value) {
   let btnListElm = document.createElement("button");
   let listElmValue = document.createTextNode(value);
-  let listDelElm = document.createElement("i");
+  let listDelElm = document.createElement("span");
   listDelElm.classList.add("fa");
   listDelElm.classList.add("fa-trash-o");
 
@@ -31,3 +32,8 @@ function addbtn() {
   printListItem(inputAdd);
 }
 inputAddbtn.addEventListener("click", addbtn);
+
+function crossInput() {
+  listContainer.classList.add("first");
+}
+listContainer.addEventListener("click", crossInput);
