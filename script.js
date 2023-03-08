@@ -7,6 +7,11 @@ const listItem = [];
 
 function printListItem(value) {
   let btnListElm = document.createElement("button");
+  btnListElm.addEventListener("click", function (e) {
+    btnListElm.classList.add("first");
+
+    console.log(btnListElm.classList);
+  });
   let listElmValue = document.createTextNode(value);
   let listDelElm = document.createElement("span");
   listDelElm.classList.add("fa");
@@ -28,12 +33,14 @@ function addbtn() {
   const inputAdd = document.querySelector(".add-input").value;
 
   listItem.unshift(inputAdd);
-
   printListItem(inputAdd);
 }
 inputAddbtn.addEventListener("click", addbtn);
 
-function crossInput() {
-  listContainer.classList.add("first");
-}
-listContainer.addEventListener("click", crossInput);
+// cross the list when finished
+// function crossInput() {
+//   listContainer.classList.add("first");
+
+//   console.log(listItem);
+// }
+// listContainer.addEventListener("click", crossInput);
