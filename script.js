@@ -23,21 +23,26 @@ function addbtn() {
       console.log("parent clicked");
     });
     let listElmValue = document.createTextNode(value);
-    let listDelElm = document.createElement("button");
+    if (value === "") {
+      alert("please write your task");
+    } else {
+      let listDelElm = document.createElement("button");
 
-    listDelElm.addEventListener("click", function (e) {
-      console.log("child clicked");
-      btnListElm.addEventListener("click", event.stopPropagation());
-      listContainer.removeChild(btnListElm);
-    });
+      listDelElm.addEventListener("click", function (e) {
+        console.log("child clicked");
+        btnListElm.addEventListener("click", event.stopPropagation());
+        listContainer.removeChild(btnListElm);
+      });
 
-    listDelElm.classList.add("fa");
-    listDelElm.classList.add("fa-trash-o");
+      listDelElm.classList.add("fa");
+      listDelElm.classList.add("fa-trash-o");
 
-    btnListElm.appendChild(listDelElm);
-    btnListElm.appendChild(listElmValue);
-    btnListElm.classList.add("listBtn");
-    listContainer.appendChild(btnListElm);
+      btnListElm.appendChild(listDelElm);
+      btnListElm.appendChild(listElmValue);
+      btnListElm.classList.add("listBtn");
+      listContainer.appendChild(btnListElm);
+    }
+    console.log(listElmValue, typeof listElmValue);
   }
   listItem.unshift(inputAdd);
   printListItem(inputAdd);
