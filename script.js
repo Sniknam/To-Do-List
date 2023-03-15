@@ -12,9 +12,10 @@ const inputAddbtn = document.querySelector(".add-btn");
 function addbtn() {
   // input variable
   const inputAdd = document.querySelector(".add-input").value;
+  console.log(inputAdd);
 
+  // print list
   const listItem = [];
-
   function printListItem(value) {
     let btnListElm = document.createElement("button");
     btnListElm.addEventListener("click", function (e) {
@@ -41,11 +42,17 @@ function addbtn() {
       btnListElm.appendChild(listElmValue);
       btnListElm.classList.add("listBtn");
       listContainer.appendChild(btnListElm);
+      ``;
     }
-    console.log(listElmValue, typeof listElmValue);
   }
   listItem.unshift(inputAdd);
   printListItem(inputAdd);
+
+  function clearInput() {
+    if (inputAdd.value != "") {
+      inputAdd.value = "";
+    }
+  }
 }
 inputAddbtn.addEventListener("click", addbtn);
 
