@@ -12,9 +12,8 @@ const inputAddbtn = document.querySelector(".add-btn");
 function addbtn() {
   // input variable
   const inputAdd = document.querySelector(".add-input").value;
-  console.log(inputAdd);
 
-  // print list
+  // print list function
   const listItem = [];
   function printListItem(value) {
     let btnListElm = document.createElement("button");
@@ -42,17 +41,18 @@ function addbtn() {
       btnListElm.appendChild(listElmValue);
       btnListElm.classList.add("listBtn");
       listContainer.appendChild(btnListElm);
-      ``;
+
+      function clearInput() {
+        if (inputAdd != "") {
+          console.log("wwww");
+          document.querySelector(".add-input").value = "";
+        }
+      }
+      clearInput();
     }
   }
   listItem.unshift(inputAdd);
   printListItem(inputAdd);
-
-  function clearInput() {
-    if (inputAdd.value != "") {
-      inputAdd.value = "";
-    }
-  }
 }
 inputAddbtn.addEventListener("click", addbtn);
 
