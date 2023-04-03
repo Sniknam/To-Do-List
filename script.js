@@ -20,6 +20,10 @@ function addbtn() {
     btnListElm.addEventListener("click", function (e) {
       btnListElm.classList.add("first");
 
+      if (btnListElm) {
+        btnListElm.classList.add("second");
+      }
+      console.log(listItem);
       console.log("parent clicked");
     });
     let listElmValue = document.createTextNode(value);
