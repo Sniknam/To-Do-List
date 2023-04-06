@@ -9,52 +9,72 @@ listContainer.classList.add("lastBtn");
 // add botton
 const inputAddbtn = document.querySelector(".add-btn");
 
+// function printListItem(value) {
+//   let btnListElm = document.createElement("button");
+//   btnListElm.addEventListener("click", function (e) {
+//     if (value) {
+//       btnListElm.classList.add("first");
+
+//       console.log(value);
+//     } else {
+//       btnListElm;
+//     }
+
+//     console.log("parent clicked");
+//   });
+//   let listElmValue = document.createTextNode(value);
+//   console.log(listElmValue);
+//   if (value === "") {
+//     alert("please write your task");
+//   } else {
+//     let listDelElm = document.createElement("button");
+
+//     listDelElm.addEventListener("click", function (e) {
+//       console.log("child clicked");
+//       btnListElm.addEventListener("click", event.stopPropagation());
+//       listContainer.removeChild(btnListElm);
+//     });
+
+//     listDelElm.classList.add("fa");
+//     listDelElm.classList.add("fa-trash-o");
+
+//     btnListElm.appendChild(listDelElm);
+//     btnListElm.appendChild(listElmValue);
+//     btnListElm.classList.add("listBtn");
+//     listContainer.appendChild(btnListElm);
+
+//     function clearInput() {
+//       const inputAdd = document.querySelector(".add-input").value;
+
+//       if (inputAdd != "") {
+//         document.querySelector(".add-input").value = "";
+//       }
+//     }
+//     clearInput();
+//   }
+// }
+
+// const listItem = [{ name: "aaa", listCheck: false }];
+
+function printListItem() {
+  let btnListElm = document.createElement("button");
+  let listDelElm = document.createElement("button");
+  listDelElm.classList.add("fa");
+  listDelElm.classList.add("fa-trash-o");
+
+  btnListElm.appendChild(listDelElm);
+  btnListElm.appendChild(listElmValue);
+  btnListElm.classList.add("listBtn");
+  listContainer.appendChild(btnListElm);
+}
+
 function addbtn() {
   // input variable
   const inputAdd = document.querySelector(".add-input").value;
 
   // print list function
-  const listItem = [];
-  function printListItem(value) {
-    let btnListElm = document.createElement("button");
-    btnListElm.addEventListener("click", function (e) {
-      btnListElm.classList.add("first");
+  console.log(listItem);
 
-      if (btnListElm) {
-        btnListElm.classList.add("second");
-      }
-      console.log(listItem);
-      console.log("parent clicked");
-    });
-    let listElmValue = document.createTextNode(value);
-    if (value === "") {
-      alert("please write your task");
-    } else {
-      let listDelElm = document.createElement("button");
-
-      listDelElm.addEventListener("click", function (e) {
-        console.log("child clicked");
-        btnListElm.addEventListener("click", event.stopPropagation());
-        listContainer.removeChild(btnListElm);
-      });
-
-      listDelElm.classList.add("fa");
-      listDelElm.classList.add("fa-trash-o");
-
-      btnListElm.appendChild(listDelElm);
-      btnListElm.appendChild(listElmValue);
-      btnListElm.classList.add("listBtn");
-      listContainer.appendChild(btnListElm);
-
-      function clearInput() {
-        if (inputAdd != "") {
-          console.log("wwww");
-          document.querySelector(".add-input").value = "";
-        }
-      }
-      clearInput();
-    }
-  }
   listItem.unshift(inputAdd);
   printListItem(inputAdd);
 }
