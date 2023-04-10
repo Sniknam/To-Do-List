@@ -54,18 +54,14 @@ const inputAddbtn = document.querySelector(".add-btn");
 //   }
 // }
 
-// const listItem = [{ name: "aaa", listCheck: false }];
+const listItem = [];
 
 function printListItem() {
   let btnListElm = document.createElement("button");
-  let listDelElm = document.createElement("button");
-  listDelElm.classList.add("fa");
-  listDelElm.classList.add("fa-trash-o");
+    let listDelElm = document.createElement("button");
 
-  btnListElm.appendChild(listDelElm);
-  btnListElm.appendChild(listElmValue);
-  btnListElm.classList.add("listBtn");
-  listContainer.appendChild(btnListElm);
+
+ 
 }
 
 function addbtn() {
@@ -75,7 +71,10 @@ function addbtn() {
   // print list function
   console.log(listItem);
 
-  listItem.unshift(inputAdd);
+  
+  }
+
+  // listItem.unshift(objInput);
   printListItem(inputAdd);
 }
 inputAddbtn.addEventListener("click", addbtn);
