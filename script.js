@@ -28,9 +28,10 @@ function printListItem() {
     if (slectedItemObj.isSelected === true) {
       btnListElm.classList.add("first");
     }
+
     listContainer.appendChild(btnListElm);
 
-    function cross() {
+    function crossList() {
       if (slectedItemObj.isSelected === false) {
         slectedItemObj.isSelected = true;
       } else {
@@ -40,7 +41,13 @@ function printListItem() {
 
       console.log(listItem);
     }
-    btnListElm.addEventListener("click", cross);
+    btnListElm.addEventListener("click", crossList);
+
+    function removeList() {
+      event.stopPropagation();
+      listContainer.removeChild(btnListElm);
+    }
+    listDelElm.addEventListener("click", removeList);
   }
 
   // btnListElm.addEventListener("click", function (e) {
