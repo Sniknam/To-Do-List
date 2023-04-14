@@ -33,62 +33,34 @@ function printListItem() {
 
     function crossList() {
       if (slectedItemObj.isSelected === false) {
+        listItem.splice(i, 1);
+        listItem.unshift(slectedItemObj);
         slectedItemObj.isSelected = true;
       } else {
         slectedItemObj.isSelected = false;
       }
+
       printListItem();
+      console.log(listItem);
     }
     btnListElm.addEventListener("click", crossList);
 
     function removeList(event) {
       event.stopPropagation();
-      const index = listItem.indexOf(slectedItemObj);
-
-      console.log(listItem);
-      listItem.splice(index, 1);
-      listContainer.removeChild(btnListElm);
-      console.log(listItem);
+      const filterListItem = listItem.filter((item) => {
+        return item != slectedItemObj;
+        console.log(item);
+        console.log(slectedItemObj);
+      });
+      // console.log(listItem);
+      // listItem.splice(i, 1);
+      // listContainer.removeChild(btnListElm);
+      // console.log(listItem);
     }
 
     listDelElm.addEventListener("click", removeList);
   }
 }
-
-// btnListElm.addEventListener("click", function (e) {
-//   if (objInput.isSelected === false) {
-//     btnListElm.classList.add("first");
-
-//     objInput.isSelected = true;
-//     listItem.unshift(objInput);
-//   } else if (objInput.isSelected === true) {
-//     btnListElm.classList.add("second");
-//     objInput.isSelected = false;
-//     listItem.push(objInput);
-//   } else {
-//     btnListElm;
-//   }
-//   console.log("parent clicked");
-// });
-// console.log(listElmValue);
-// if (inputAdd === "") {
-//   alert("please write your task");
-// } else {
-//   let listDelElm = document.createElement("button");
-//   listDelElm.addEventListener("click", function (e) {
-//     console.log("child clicked");
-//     btnListElm.addEventListener("click", event.stopPropagation());
-//     listContainer.removeChild(btnListElm);
-//   });
-
-//   function clearInput() {
-//     if (inputAdd != "") {
-//       document.querySelector(".add-input").value = "";
-//     }
-//   }
-//   clearInput();
-// }
-// }
 
 function addbtn() {
   const inputAdd = document.querySelector(".add-input").value;
