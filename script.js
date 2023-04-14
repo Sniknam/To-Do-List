@@ -48,10 +48,14 @@ function printListItem() {
     function removeList(event) {
       event.stopPropagation();
       const filterListItem = listItem.filter((item) => {
-        return item != slectedItemObj;
-        console.log(item);
-        console.log(slectedItemObj);
+        return item.lable != slectedItemObj.lable;
       });
+      console.log(filterListItem);
+      listItem = filterListItem;
+      console.log(listItem);
+
+      printListItem();
+
       // console.log(listItem);
       // listItem.splice(i, 1);
       // listContainer.removeChild(btnListElm);
