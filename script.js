@@ -10,7 +10,7 @@ listContainer.classList.add("lastBtn");
 const inputAddbtn = document.querySelector(".add-btn");
 const inputAdd = document.querySelector(".add-input").value;
 const objInput = { lable: inputAdd, isSelected: false };
-const listItem = [];
+let listItem = [];
 
 function printListItem() {
   listContainer.innerHTML = "";
@@ -31,40 +31,43 @@ function printListItem() {
 
     listContainer.appendChild(btnListElm);
 
+    //crossing task from the list
     function crossList() {
-      if (slectedItemObj.isSelected === false) {
-        listItem.splice(i, 1);
-        listItem.unshift(slectedItemObj);
-        slectedItemObj.isSelected = true;
-      } else {
-        slectedItemObj.isSelected = false;
-      }
+      // remove item from list
+      listItem.splice(i, 1);
 
+      //when item is selectede (finishid task -cross)
+      if (slectedItemObj.isSelected === false) {
+        listItem.push(slectedItemObj);
+        slectedItemObj.isSelected = true;
+
+        // when item unselected (unfinished task - nucrossed , back to list  )
+      } else if (slectedItemObj.isSelected === true) {
+        slectedItemObj.isSelected = false;
+        listItem.unshift(slectedItemObj);
+      }
+      // reprinting the list
       printListItem();
-      console.log(listItem);
     }
     btnListElm.addEventListener("click", crossList);
 
+    // remove task from list
     function removeList(event) {
       event.stopPropagation();
       const filterListItem = listItem.filter((item) => {
         return item.lable != slectedItemObj.lable;
       });
-      console.log(filterListItem);
+
       listItem = filterListItem;
-      console.log(listItem);
 
       printListItem();
-
-      // console.log(listItem);
-      // listItem.splice(i, 1);
-      // listContainer.removeChild(btnListElm);
-      // console.log(listItem);
     }
 
     listDelElm.addEventListener("click", removeList);
   }
 }
+
+printListItem();
 
 function addbtn() {
   const inputAdd = document.querySelector(".add-input").value;
