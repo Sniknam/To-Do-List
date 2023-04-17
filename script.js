@@ -8,7 +8,7 @@ listContainer.classList.add("lastBtn");
 
 // add botton
 const inputAddbtn = document.querySelector(".add-btn");
-const inputAdd = document.querySelector(".add-input").value;
+let inputAdd = document.querySelector(".add-input").value;
 const objInput = { lable: inputAdd, isSelected: false };
 let listItem = [];
 
@@ -54,8 +54,11 @@ function printListItem() {
     // remove task from list
     function removeList(event) {
       event.stopPropagation();
+
       const filterListItem = listItem.filter((item) => {
-        return item.lable != slectedItemObj.lable;
+        console.log(item);
+
+        return item.id != slectedItemObj.id;
       });
 
       listItem = filterListItem;
@@ -71,16 +74,15 @@ printListItem();
 
 function addbtn() {
   const inputAdd = document.querySelector(".add-input").value;
-  const objInput = { lable: inputAdd, isSelected: false };
+  const objInput = { lable: inputAdd, isSelected: false, id: Math.random() };
 
   if (inputAdd) {
     listItem.unshift(objInput);
-  } else if (inputAdd !== "") {
     document.querySelector(".add-input").value = "";
   } else if (inputAdd === "") {
     alert("please write your task");
   }
   printListItem();
-  console.log(listItem);
 }
+
 inputAddbtn.addEventListener("click", addbtn);
